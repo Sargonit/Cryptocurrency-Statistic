@@ -1,0 +1,40 @@
+<div *ngIf="cryptocurrencySimplifiedList">
+    <table>
+        <thead>
+            <th (click)="sorting($event)" 
+                data-name="name"
+                data-sort="default">
+                Name
+            </th>
+            <th (click)="sorting($event)" 
+                class="padding" 
+                data-name="maxPrice"
+                data-sort="default">
+                Max price
+            </th>
+            <th (click)="sorting($event)" 
+                class="padding" 
+                data-name="minPrice"
+                data-sort="default">
+                Min price
+            </th>            
+        </thead>
+        <tr *ngFor="let cryptocurrency of cryptocurrencySimplifiedList; let i=index"
+            [ngClass]="i % 2 === 0 ? 'data-row-style' : ''">
+            <td>
+                <input id={{cryptocurrency.name}} 
+                       attr.data-id={{cryptocurrency.id}} 
+                       type="checkbox" 
+                       (change)="checkValue($event)"
+                       [checked]="cryptocurrency.isChecked"/>                
+                <span>{{ cryptocurrency.name }}</span>
+            </td>
+            <td class="padding">
+                <span>{{ cryptocurrency.maxPrice }}</span>
+            </td>
+            <td class="padding">
+                <span>{{ cryptocurrency.minPrice }} </span>
+            </td>
+        </tr>
+    </table>
+</div>

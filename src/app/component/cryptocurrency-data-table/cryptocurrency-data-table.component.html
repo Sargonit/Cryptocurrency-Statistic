@@ -1,0 +1,90 @@
+<div class="container">   
+    <table>
+        <tr>
+            <td class="main-table">
+                <table class="date-table">
+                    <thead>
+                        <tr>
+                            <td (click)="sorting($event)" 
+                                data-name="name"
+                                data-sort="default"
+                                class="date-table padding-left header">
+                                Name
+                            </td>
+                        </tr>
+                        <tr>
+                            <td (click)="sorting($event)" 
+                                data-name="minPrice"
+                                data-sort="default"
+                                class="date-table padding-left header">
+                                Min price
+                            </td>
+                        </tr>
+                        <tr>
+                            <td (click)="sorting($event)" 
+                                data-name="maxPrice"
+                                data-sort="default"
+                                class="date-table padding-left header">
+                                Max price
+                            </td>
+                        </tr>
+                        <tr>
+                            <td (click)="sorting($event)" 
+                                data-name="date"
+                                data-sort="default"
+                                class="date-table text-centered header">
+                                Date
+                            </td>                                
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let date of dateList; let i=index">
+                            <tr>
+                                <td class="date-table text-centered" [ngClass]=" (i % 2 === 0) ? 'data-row-style' : ''">
+                                    {{ date }}
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </tbody> 
+                </table>
+            </td>
+            <ng-container *ngFor="let cryptocurrency of cryptocurrenciesListForView; let i=index">            
+                <td class="main-table">
+                    <table class="crypto-table">
+                        <thead>
+                            <tr>
+                                <td class="crypto-table text-centered padding-left crypto-name">{{ cryptocurrency.name }}</td>
+                            </tr>
+                            <tr>
+                                <td class="crypto-table padding-left min-max-price">{{ cryptocurrency.minPrice }}</td>
+                            </tr>
+                            <tr>
+                                <td class="crypto-table padding-left min-max-price">{{ cryptocurrency.maxPrice }}</td>
+                            </tr>
+                            <tr>
+                                <td (click)="sorting($event)" 
+                                    data-name="price"
+                                    data-sort="default" 
+                                    class="crypto-table text-centered header">
+                                    price by date
+                            </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let history of cryptocurrenciesListForView[i].points; let priceIndex=index">
+                                <td class="crypto-table padding-left" [ngClass]=" (priceIndex % 2 === 0) ? 'data-row-style' : ''">
+                                    {{ history.y }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </ng-container>
+        </tr>
+    </table>
+</div>
+
+<div id="download-CSV">
+    <button (click)="downloadCSV()">Download CSV</button>
+</div>
+    

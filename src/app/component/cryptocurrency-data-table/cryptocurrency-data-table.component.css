@@ -1,0 +1,59 @@
+table {
+    border-collapse: collapse;
+}
+
+.container {
+    position: relative;
+    height: 575px;
+    overflow: auto;
+}
+
+.main-table {
+    padding: 0px;
+}
+
+.date-table {
+    border-bottom: 2px solid #F8F9F9;
+    width: 160px;
+    padding: 4px 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+.crypto-table {
+    border-bottom: 2px solid #F8F9F9;
+    width: 120px;
+    margin-left: -1px;
+    padding: 4px 0px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.text-centered {
+    text-align: center;
+}
+
+.padding-left {
+    padding-left: 17px;
+}
+
+.header {
+    background-color: #AED6F1;
+    font-weight: bold;
+}
+
+.crypto-name {
+    background-color: #F8C471;
+    font-weight: bold;
+}
+
+.min-max-price {
+    background-color: #D7DBDD;
+}
+
+.data-row-style {
+    background-color: #E5E7E9;
+}
+
+#download-CSV {
+    margin-top: 20px;
+}

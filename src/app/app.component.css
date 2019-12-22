@@ -1,0 +1,31 @@
+p {
+  font-family: Lato;
+}
+.main-wrapper{
+  display: inline-flex;
+  height: 650px;
+}
+.wrapper{
+  /* border: 1px solid black; */
+  margin-top: 50px;
+}
+
+.wrapper-cryptocurrency-list {
+  display: inline-block;
+  overflow: auto;
+  width: 400px;
+  margin-left: 25px;
+}
+
+.container {
+  display: inline-block;
+  width: 1000px;
+  margin-left: 50px;
+}
+
+.active {
+  color: 'orange';
+}
+
+
+
